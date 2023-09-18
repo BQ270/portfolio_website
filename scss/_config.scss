@@ -1,0 +1,20 @@
+//  variables
+$wbsite-width: 1280px;
+$main-color: #ffbc00;
+$light-color: #f4f4f4;
+$medium-color: #ccc;
+$dark-color: #333;
+$bg-image: url('../img/showcase.jpg');
+
+// This function checks the color of a text and changes it to a dark color, when the lightness is greater than 50. For this to be effective, the background color and the text color have to be the same
+// eg.   background: $main-color;
+//       color: set-text-color($main-color);
+
+@function set-text-color($color){
+    @if(lightness($color) > 50){
+        @return #000;
+    }
+    @else{
+        @return #fff
+    }
+}

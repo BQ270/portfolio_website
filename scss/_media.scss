@@ -1,0 +1,190 @@
+@media(max-width: 800px){
+    #header-home{
+        height: 30rem;
+
+        .header-content{
+            padding-top: 5rem;
+        }
+    }
+}
+
+
+// media queries for mobile devices
+@media(max-width:500px){
+    #main-nav{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+
+        li{
+            padding: 1rem;
+        }
+    }
+
+    #header{
+        &-home{
+            // Resuce the size of the header for mobile devices
+            height: 10rem;
+            border-bottom: 3px solid $main-color;
+            // set background position for the header-home in mobile device to be equal to the header-inner
+            background-position: 20% 30%;
+
+            // remove the content display and button
+            .header-content{
+                display: none;
+            }
+        }
+
+
+        // set the height of the inner pages to be equal to that of the main header(home)
+        &-inner{
+            height: 10rem;
+        }
+
+        
+    }
+
+
+    // stack all grid 
+    #home-a .specials,
+    #home-b .stats,
+    #home-c .process,
+    #about-d .testimonials,
+    .items,
+    #contact-b .contact-info
+    {
+        display: grid;
+        grid-template-columns: repeat(1,1fr);
+    }
+
+
+
+        // home creating a faint border-bottom to separate the specials in the home 
+        #home{
+            &-a{
+                .specials div{
+                    border-bottom: 2px solid $light-color;
+                    padding-bottom: 1rem;
+    
+                    // remove the border and padding effects from the bottom of the div's last child
+                    &:last-child{
+                        border: none;
+                        padding-bottom: 0;
+                    }
+                }
+            }
+    
+            &-b{
+                .stats{
+                    div{
+                        padding: 2rem 0 1rem 0;
+                    }
+                }
+            }
+    
+    
+    
+        }
+
+
+        // ABOUT
+        #about{
+            &-a{
+                .about-info{
+                    grid-template-areas: 
+                    'bio-img'
+                    'bio'
+                    'awd1'
+                    'awd2'
+                    'awd3';
+                }
+            }
+
+            &-c{
+                display: none;
+            }
+        }
+
+
+        // CONTACT
+        #contact{
+            &-a{
+                .text-fields{
+                    grid-template-areas: 
+                    'name'
+                    'subject'
+                    'email'
+                    'phone'
+                    'message';
+                    
+                }
+            }
+
+            &-b{
+                // reduce the padding of the contact info
+                padding: 1rem;
+                .contact-info{
+
+                    // separate each div with a faint line
+                    div{
+                        border-bottom: 1px solid #555;
+                        padding: 1rem;
+
+                        // remove faint line from the last child's div
+                        &:last-child{
+                            border: none;
+                        }
+                    }
+
+                
+                }
+            }
+
+            &-c{
+                h1{
+                    font-size: 2rem;
+                }
+            }
+
+            
+        }
+        
+        // Footer
+        #main-footer{
+
+            // reduce the size of the main-footer
+            height: 7rem;
+
+            // adjust the height of the footer-content to fit the main-footer and add padding 1rem across all sides
+            .footer-content{
+                height: 5rem;
+                flex-direction: column;
+                align-items: center;
+                padding: 1rem;
+            }
+        }
+    
+    }
+
+    // Landscape mode
+    @media(max-height: 580px){
+        #header-home{
+            .header-content{
+                padding-top: 3rem;
+            }
+        }
+    }
+
+    @media(max-height: 330px){
+        #header-home{
+            .header-content{
+                h1{
+                    font-size: 2rem;
+                }
+            }
+        }
+    }
+
+
+
+

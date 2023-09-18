@@ -1,0 +1,107 @@
+.container{
+    max-width: $wbsite-width;
+    margin: auto;
+    padding: 0 1.5rem;
+    overflow: hidden;
+}
+
+
+// we use a %btn-shared to create a general btn framework to be used by all btn classes
+%btn-shared{
+    display: inline-block;
+    padding: 0.8rem 2rem;
+    border: none;
+    cursor: pointer;
+    transition: all 0.5s
+}
+
+.btn{
+
+    &-main{
+        // we use @extend %btn-shared to link the %btn-shared framework to all the btn- extensions
+        @extend %btn-shared;
+        color: #333;
+        background-color: $main-color;
+    }
+
+
+         // we use @extend %btn-shared to link the %btn-shared framework to all the btn- extensions
+    &-light{
+        @extend %btn-shared;
+        color: #333;
+        background-color: $light-color;
+    }
+
+
+         // we use @extend %btn-shared to link the %btn-shared framework to all the btn- extensions
+    &-dark{
+        @extend %btn-shared;
+        color: $light-color;
+        background-color: $dark-color;
+    }
+}
+
+// class^='btn-' means select all classes with the extension: 'btn-'
+button[class^='btn-']:hover,
+a[class^='btn-']:hover,
+input[class^='btn-']:hover{
+    background-color: $main-color;
+}
+
+.lead{
+    font-size: 1.2rem;
+    margin-bottom: 2rem;
+}
+
+.text-center{
+    text-align: center;
+}
+
+.py{
+    &-1{padding: 1rem 0;}
+    &-2{padding: 2rem 0;}
+    &-3{padding: 3rem 0;}
+    &-4{padding: 4rem 0;}
+    
+}
+
+.my{
+    &-1{margin: 1rem 0;}
+    &-2{margin: 2rem 0;}
+    &-3{margin: 3rem 0;}
+    &-4{margin: 4rem 0;}
+}
+
+.section-title{
+    text-align: center;
+}
+
+.bottom-line{
+    height: 5px;
+    width: 40px;
+    display: block;
+    background-color: $main-color;
+    margin: auto;
+}
+
+.bg{
+    &-main{
+        background: $main-color;
+        color: set-text-color($main-color);
+    }
+
+    &-light{
+        background: $light-color;
+        color: set-text-color($light-color);
+    }
+
+    &-dark{
+        background-color: $dark-color;
+        color: set-text-color($dark-color);
+    }
+
+    &-medium{
+        background: $medium-color;
+        color: set-text-color($medium-color);
+    }
+}
